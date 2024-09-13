@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analytics</title>
 </head>
-<body>
-    <h1>My New App</h1>
+<body><h1>Medias List</h1>
+    <ul>
+        {% for media in medias %}
+            <li>
+                Name: {{ media.data.name }} <br>
+                User_id: {{ media.user_id }} <br>
+                Date: {{ media.created_at }}
+            </li>
+        {% empty %}
+            <li>No medias available.</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
